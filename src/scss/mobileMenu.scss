@@ -1,0 +1,96 @@
+.slineMobileMenu {
+	width: 100vw;
+	overflow: hidden;
+
+	position: fixed;
+	z-index: 100;
+	top: 0px;
+	bottom: 0px;
+	left: -100%;
+
+	transition: left 0.5s, opacity 0.5s;
+
+	background: $f;
+
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+
+	&__contactBlock {
+		margin-top: auto;
+
+	}
+
+	&__list {
+		padding: 24px 16px;
+	}
+
+	&__item {
+		margin-bottom: 24px;
+		a {
+			color: $text;
+			text-decoration: none;
+			font-size: 24px;
+		}
+	}
+
+	&__contact {
+		color: $text;
+		font-size: 20px;
+		padding-bottom: 24px;
+		a {
+			display: block;
+			text-decoration: none;
+			color: $text;
+		}
+		display: block;
+		text-decoration: none;
+	}
+
+	&__CloseMobileMenu {
+		padding-top: 20px;
+		padding-right: 16px;
+		padding-left: 10px;
+
+		height: 64px;
+		width: 62px;
+
+		max-height: 50px;
+		background: none;
+		border: none;
+		font-size: 24px;
+		color: $main;
+	}
+
+	&__contactBlock {
+		padding: 24px 16px;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: -690px;
+		left: -244vw;
+		z-index: -1;
+		height: 1600px;
+		width: 954px;
+		border-radius: 50%;
+		background: $main;
+		opacity: 0.1;
+		transform: rotate(45deg);
+		transition: transform 0.3s, left 0.6s, top 0.6s;
+	}
+}
+
+.slineMobileMenu.slineMobileMenu__open {
+	left: 0%;
+	opacity: 1;
+	&:after {
+		transform: rotate(0deg);
+		top: -364px;
+		left: calc(-70% - 100vw);
+		height: 1600px;
+		width: 954px;
+	}
+}

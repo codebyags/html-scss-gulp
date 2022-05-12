@@ -1,0 +1,84 @@
+.slineLines {
+
+	&__header {
+		padding: 16px 16px;
+	}
+
+	&__grid {
+
+	}
+
+	&__text {
+		padding: 0px 16px;
+	}
+
+	&__line {
+		padding: 32px 16px;
+		display: flex;
+		flex-direction: column-reverse;
+
+
+		&Info {
+
+		}
+
+		&Name {
+
+		}
+
+		&Text {
+
+		}
+
+		&Image {
+
+		}
+
+		&ImageMobile {
+			width: 100%;
+		}
+
+		&ImageDesctop {
+			display: none;
+		}
+	}
+
+
+	@media (min-width: $tablet_width) {
+		&__line {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 32px;
+			&Info {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+	}
+
+	@media (min-width: $desktop-mini-width) {
+
+
+	}
+
+	@media (min-width: $desktop-width) {
+
+		&__header {
+			padding: 0;
+			padding-bottom: 20px;
+		}
+
+		&__text {
+			padding: 0;
+		}
+
+
+		&__line {
+
+			grid-gap: 60px;
+			padding: 0;
+			padding-top:32px;
+		}
+	}
+}

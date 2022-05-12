@@ -1,0 +1,108 @@
+html
+    head
+        title S-Line
+        <meta charset="utf-8">
+        <meta data-rh="true" name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1"/>
+        link(href="./css/style.css?version=5" rel="stylesheet")
+        script(src="./js/bundle.js?version=5")
+    body.sline
+        header
+            nav.slineHeader
+                .container
+                    .slineHeader__block
+                        a.slineHeader__Logo(href="/")
+                            img(src="./img/content/logo.png")
+                        .slineHeader__desktopNav
+                            ul.slineHeader__list
+                                li.slineHeader__item
+                                    a(href="/company.html") О компании
+                                li.slineHeader__item
+                                    a(href="/oborudovanie.html") Оборудование
+                                li.slineHeader__item
+                                    a(href="princip_ochistki_vozduha.html") Очистка воздуха
+                                li.slineHeader__item
+                                    a(href="/service.html") Обслуживание
+                                li.slineHeader__item
+                                    a(href="/contact.html") Контакты
+                        a.slineHeader__blockPhone(href="tel:+74996535335")
+                            .slineHeader__Phone +7 (499) 653-53-35
+                            .slineHeader__WorkTimer Пн-Пт с 9:00-18:00
+                        .slineHeader__OpenMobileBlock
+                            button.slineHeader__OpenMobileMenu
+                                i.icon-menu
+    main
+        block content
+
+    footer.slineFooter
+        .container
+            .slineFooter__grid
+                .slineFooter__block
+                    .slineFooter__header Разделы
+                    ul.slineFooter__list
+                        li.slineFooter__item
+                            a(href="/") Главная
+                        li.slineFooter__item
+                            a(href="/company.html") О компании
+                        li.slineFooter__item
+                            a(href="/oborudovanie.html") Оборудование
+                        li.slineFooter__item
+                            a(href="princip_ochistki_vozduha.html") Очистка воздуха
+                        li.slineFooter__item
+                            a(href="/service.html") Обслуживание
+                        li.slineFooter__item
+                            a(href="/contact.html") Контакты
+
+                .slineFooter__block
+                    .slineFooter__header Юридическая информация
+                    ul.slineFooter__list
+                        li.slineFooter__item ООО «С-Лайн»<br>ИНН 9000011000<br>КПП 770100000<br>ОГРН: 1207700430948
+                        li.slineFooter__item
+                            a Политика конфиденциальности
+                        li.slineFooter__item
+                            a Соглашение обработки данных
+
+                .slineFooter__block
+                    .slineFooter__header Контактная информация
+                    ul.slineFooter__list
+                        li.slineFooter__item
+                            a.slineFooter__phone(href="tel:74996535335") +7 (499) 653-53-35
+                        li.slineFooter__item
+                            a.slineFooter__phone(href="tel:79164744979") +7 (916) 474-49-79
+                        li.slineFooter__item
+                            a.slineFooter__email(href="mailto:info@sline-air.ru") info@sline-air.ru
+                        li.slineFooter__item 139605, Москва ул. Остоженка, с.1, к.3, офис 55
+
+                .slineFooter__block
+                    .slineFooter__header Режим работы
+                    ul.slineFooter__list
+                        li.slineFooter__item ПН – ПТ<br>09:00–18:00
+                        li.slineFooter__item СБ – ВС<br>выходные
+
+
+
+            .slineFooter__end Все права защищены. Копирование материалов с сайта запрещено. (с) 2022 ООО «С-Лайн»
+
+    .slineMobileMenu
+        button.slineMobileMenu__CloseMobileMenu
+            i.icon-cross
+        ul.slineMobileMenu__list
+            li.slineMobileMenu__item
+                a(href="/") Главная
+            li.slineMobileMenu__item
+                a(href="/company.html") О компании
+            li.slineMobileMenu__item
+                a(href="/oborudovanie.html") Оборудование
+            li.slineMobileMenu__item
+                a(href="princip_ochistki_vozduha.html") Очистка воздуха
+            li.slineMobileMenu__item
+                a(href="/service.html") Обслуживание
+            li.slineMobileMenu__item
+                a(href="/contact.html") Контакты
+        .slineMobileMenu__contactBlock
+            p.slineMobileMenu__contact Москва ул. Остоженка,<br>с.1, к.3, офис 55
+            p.slineMobileMenu__contact
+                a(href="tel:74996535335") +7 (499) 653-53-35
+                a(href="tel:79164744979") +7 (916) 474-49-79
+            a(href="mailto:info@sline-air.ru").slineMobileMenu__contact info@sline-air.ru
+
+    .backrgoundPrallax

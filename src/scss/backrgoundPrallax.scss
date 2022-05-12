@@ -1,0 +1,40 @@
+.backrgoundPrallax {
+	position: absolute;
+	z-index: -1;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	overflow: hidden;
+	padding-top: 50vh;
+
+	//transition: top 0.2s;
+
+	&__object {
+		width: 500vw;
+		height: 300vw;
+		border-radius: 50%;
+		background-color: $f;
+		transform:  translateX(-50%) rotate(15deg);
+		margin-top: -15%;
+		//border: 1px solid $text;
+
+		&_c {
+			transform: translateX(-50%) translateY(-50%) rotate(-15deg);
+			background-color: $main;
+			opacity: 0.05;
+		}
+	}
+
+	@media (min-width: $desktop-mini-width) {
+		padding-top: 10vh;
+		&__object {
+			width: 250vw;
+			height: 100vw;
+			transform:  translateX(-25%) rotate(20deg);
+		}
+		&_c {
+			transform:  translateX(-50%) rotate(-20deg);
+		}
+	}
+}

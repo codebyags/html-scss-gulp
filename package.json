@@ -1,0 +1,31 @@
+{
+  "scrips": {
+    "run-dev": "gulp",
+    "clean": "gulp clean",
+    "img": "gulp optiimg"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.9",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-minify": "^0.9.2",
+    "gulp-html-bem-validator": "^1.0.5",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-message": "^1.0.4",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^3.0.0",
+    "gulp-w3c-html-validator": "^5.1.2",
+    "gulp-webp": "^4.0.1",
+    "require-dir": "^1.2.0",
+    "sass": "^1.50.1"
+  },
+  "dependencies": {
+    "@coreui/icons": "^3.0.0-alpha.0",
+    "reset-css": "^5.0.1",
+    "swiper": "^8.1.4"
+  }
+}

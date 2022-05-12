@@ -1,0 +1,33 @@
+$tablet_width: 768px;
+$desktop-mini-width: 990px;
+$desktop-width: 1280px;
+
+
+@import "./node_modules/reset-css/sass/reset";
+
+@import "colors";
+@import "typo";
+@import "iconsfont"; // http://demo.amitjakhu.com/dripicons/
+
+@import "ui";
+
+@import "sline";
+
+@import "header";
+@import "mobileMenu";
+
+@import "backrgoundPrallax";
+
+
+@import "block1";
+@import "block2";
+@import "slineBlock3";
+@import "slineBlock4";
+
+@import "company";
+@import "slineDir";
+@import "slineService";
+@import "slineAir";
+@import "slineLines";
+
+@import "slineFooter";

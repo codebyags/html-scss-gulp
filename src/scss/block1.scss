@@ -1,0 +1,76 @@
+.slineBlock1 {
+
+
+	&__content {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+
+	&__ImageMobile {
+		width: 100%;
+	}
+
+	&__ImageDesctop {
+		display: none;
+	}
+
+	&__header {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 28px;
+		text-transform: uppercase;
+		padding-bottom: 20px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 20px;
+		padding-bottom: 20px;
+	}
+
+	&__info {
+		padding: 0 16px;
+	}
+
+	@media (min-width: $tablet_width) {
+
+
+		&__content {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		&__ImageMobile {
+			display: none;
+		}
+
+		&__ImageDesctop {
+			order: 2;
+			display: block;
+			min-height: 100%;
+			max-width: 100%;
+			object-fit: cover;
+		}
+
+		&__info {
+			order: 1;
+		}
+	}
+
+	@media (min-width: $desktop-mini-width) {
+
+
+		&__content {
+			grid-gap: 60px;
+		}
+	}
+
+	@media (min-width: $desktop-width) {
+
+		&__info {
+			padding: 0px;
+		}
+	}
+}

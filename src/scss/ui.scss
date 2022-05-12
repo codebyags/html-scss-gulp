@@ -1,0 +1,49 @@
+.btn {
+	display: inline-block;
+	padding: 8px 12px;
+	text-decoration: none;
+	color: $f;
+	background-color: $main;
+	cursor: pointer;
+	border: none;
+	transition: background-color 0.2s;
+
+	&:hover {
+		background-color: $text;
+	}
+}
+
+
+.slineFormField {
+	padding-bottom: 20px;
+
+	label {
+		display: block;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 20px;
+		padding-bottom: 8px;
+	}
+
+	input {
+		display: block;
+		border: none;
+		font-size: 16px;
+		line-height: 20px;
+		width: 100%;
+		height: 30px;
+		border-bottom: 1px solid #DDD;
+
+
+		font-family: 'Montserrat', sans-serif;
+
+		&:focus, &:focus-visible {
+			background-color: $f;
+			border: none;
+			border-bottom: 1px solid $text;
+			outline: none;
+		}
+	}
+
+
+}

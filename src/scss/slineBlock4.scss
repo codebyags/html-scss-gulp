@@ -1,0 +1,126 @@
+.slineBlock4 {
+	padding-top: 60px;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+
+	.container {
+		min-width: 100%;
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 16px;
+
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 18px;
+
+		padding: 0 16px;
+
+		a {
+			text-decoration: none;
+			color: $main;
+		}
+	}
+
+	&__header {
+		font-style: normal;
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 28px;
+		text-transform: uppercase;
+	}
+
+	&__phons {
+
+	}
+
+	&__phone {
+		display: block;
+	}
+
+	&__email {
+
+	}
+
+
+	&__map {
+		iframe {
+			max-height: 300px;
+		}
+	}
+
+	&__button {
+		text-transform: uppercase;
+		height: 40px;
+	}
+
+
+
+	@media (min-width: $tablet_width) {
+		padding: 0px;
+		margin-top: 80px;
+
+		position: relative;
+
+		.container {
+			min-width: initial;
+			/*position: absolute;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom: 0px;*/
+		}
+
+		&__grid {
+			grid-template-columns: 1fr 2fr;
+			grid-gap: 0;
+			//display: block;
+		}
+
+		&__info {
+			//max-width: 300px;
+
+			min-height: 400px;
+			padding: 40px 16px 40px 16px;
+		}
+
+		&__map {
+			iframe {
+				max-height: initial;
+				height: 400px;
+			}
+		}
+
+	}
+
+	@media (min-width: $desktop-mini-width) {
+		margin-top: 120px;
+
+
+		&__info {
+			//max-width: 300px;
+
+			min-height: 400px;
+			padding: 40px 40px 40px 24px;
+		}
+	}
+
+	@media (min-width: $desktop-width) {
+		margin-top: 140px;
+
+		&__info {
+			//max-width: 300px;
+
+			min-height: 400px;
+			padding: 40px 80px 40px 0px;
+		}
+	}
+
+}

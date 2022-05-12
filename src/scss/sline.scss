@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.sline{
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	main {
+		padding-top: 60px;
+		margin-bottom: 80px;
+	}
+
+	footer {
+		margin-top: auto;
+	}
+
+	&__open {
+		overflow: hidden;
+		//position: fixed;
+	}
+}
+
+
+
+@media (min-width: $tablet_width) {
+	.sline{
+		main {
+			padding-top: 80px;
+		}
+	}
+}
+
+@media (min-width: $desktop-mini-width) {
+	.sline{
+		main {
+			padding-top: 120px;
+		}
+	}
+}
+
+@media (min-width: $desktop-width) {
+	.container {
+		padding: 0px;
+	}
+
+	.sline{
+		main {
+			padding-top: 140px;
+		}
+	}
+}
