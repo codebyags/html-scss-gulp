@@ -6,19 +6,21 @@ body {
 }
 
 h1 {
+	font-size: 20px;
+	line-height: 24px;
+
 	font-style: normal;
 	font-weight: 600;
-	font-size: 28px;
-	line-height: 32px;
 	text-transform: uppercase;
 	padding-bottom: 20px;
 }
 
 h2 {
+	font-size: 18px;
+	line-height: 20px;
+
 	font-style: normal;
 	font-weight: 600;
-	font-size: 24px;
-	line-height: 28px;
 	text-transform: uppercase;
 	padding-bottom: 20px;
 }
@@ -46,7 +48,15 @@ ul {
 }
 
 @media (min-width: $tablet_width) {
+	h1 {
+		font-size: 28px;
+		line-height: 32px;
+	}
 
+	h2 {
+		font-size: 24px;
+		line-height: 28px;
+	}
 }
 
 @media (min-width: $desktop-width) {

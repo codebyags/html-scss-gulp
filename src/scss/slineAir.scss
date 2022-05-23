@@ -1,4 +1,23 @@
 .slineAir {
+	&__start {
+		padding-top: 20px;
+		padding-bottom: 60px;
+
+		h1 {
+
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
+
+	&__sImage {
+		max-width: 100%;
+		width: 900px;
+		margin: 0 auto;
+		display: block;
+	}
+
 
 	&__block {
 
@@ -25,6 +44,10 @@
 
 
 	@media (min-width: $tablet_width) {
+		&__start {
+			padding-bottom: 120px;
+		}
+
 		&__block {
 			padding: 16px 16px;
 			padding-bottom: 80px;
@@ -62,12 +85,22 @@
 	}
 
 	@media (min-width: $desktop-mini-width) {
-
+		&__start {
+			padding-bottom: 180px;
+			
+		}
 	}
 
 	@media (min-width: $desktop-width) {
+		&__start {
+
+			h1 {
+				padding-left: 0px;
+				padding-right: 0px;
+			}
+		}
 		&__block {
-			padding: 16px 16px;
+			padding: 16px 0px;
 			padding-bottom: 140px;
 		}
 	}

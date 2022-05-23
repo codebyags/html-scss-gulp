@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		document.addEventListener('scroll', function(e) {
 			window.requestAnimationFrame(function () {
-				console.log(document.body.scrollTop )
 				backrgoundPrallax.style.top = document.body.scrollTop * -0.5 + "px";
 			});
 

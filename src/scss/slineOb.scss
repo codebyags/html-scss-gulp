@@ -1,3 +1,155 @@
 .slineOb {
 
+
+	.slineObB1 {
+		&__header {
+			max-width: 450px;
+		}
+
+		&__left {
+			padding: 20px 16px;
+		}
+
+		&__right {
+
+		}
+
+		&__Image {
+			width: 100%;
+		}
+	}
+
+	.slineObB2 {
+		padding: 60px 16px;
+
+		&__grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 32px;
+		}
+
+		&__item {
+			text-align: center;
+		}
+
+		&__Image {
+			max-width: 100px;
+		}
+
+		&__text {
+			text-align: center;
+			font-size: 16px;
+			max-width: 200px;
+			margin: 0 auto;
+			font-weight: bold;
+			padding-top:8px;
+		}
+	}
+
+	.slineObB3 {
+		padding: 20px 16px;
+
+		&__header {
+
+		}
+
+		&__list {
+			padding-top:8px;
+			li {
+				margin-left: 20px;
+				padding-bottom: 8px;
+			}
+			li::before {
+				content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+				color: $main; /* Change the color */
+				font-weight: bold; /* If you want it to be bold */
+				display: inline-block; /* Needed to add space between the bullet and the text */
+				width: 1em; /* Also needed for space (tweak if needed) */
+				margin-left: -1em; /* Also needed for space (tweak if needed) */
+			}
+		}
+
+		&__text {
+
+		}
+	}
+
+	.slineObB4 {
+		padding: 20px 16px;
+	}
+
+	.slineObB5 {
+		padding: 20px 0px;
+	}
+
+	@media (min-width: $tablet_width) {
+		.slineObB1 {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 60px;
+
+			&__header {
+
+			}
+
+			&__left {
+				padding: 0px;
+				padding-left: 16px;
+			}
+
+			&__right {
+				padding-right: 16px;
+			}
+
+			&__Image {
+				width: 100%;
+			}
+		}
+
+		.slineObB2 {
+			padding: 60px 16px;
+
+			&__grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 32px;
+			}
+		}
+
+		.slineObB5 {
+			padding: 20px 16px;
+		}
+	}
+
+	@media (min-width: $desktop-mini-width) {
+
+	}
+
+	@media (min-width: $desktop-width) {
+		.slineObB1 {
+			&__left {
+				padding: 0;
+			}
+
+			&__header {
+				max-width: 450px;
+			}
+		}
+
+		.slineObB2 {
+			padding: 60px 0px;
+		}
+
+		.slineObB3 {
+			padding: 20px 0px;
+		}
+
+		.slineObB4 {
+			padding: 20px 0px;
+		}
+
+		.slineObB5 {
+			padding: 20px 0px;
+		}
+	}
 }
