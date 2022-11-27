@@ -25,6 +25,7 @@
 	}
 
 	&__Logo {
+		order: 3;
 		height: 50px;
 		display: block;
 
@@ -32,6 +33,10 @@
 			max-height: 100%;
 			display: block;
 		}
+	}
+
+	&__OpenMobileBlock {
+		order: 1;
 	}
 
 	&__OpenMobileMenu {
@@ -45,6 +50,7 @@
 	}
 
 	&__blockPhone {
+		order: 2;
 		text-align: right;
 		margin-left: auto;
 		padding-right: 16px;
@@ -88,26 +94,31 @@
 		}
 
 		&__desktopNav {
+			order: 2;
 			display: block;
 
 		}
 
 		&__Logo {
+			order: 1;
 			margin-right: 20px;
 		}
 
 		&__list {
+		
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 		}
 
 		&__item {
+			margin-bottom: 0px;
 			a {
 				color: $text;
 				text-decoration: none;
 
 				font-style: normal;
+				text-transform: uppercase;
 				font-weight: 400;
 				font-size: 12px;
 				line-height: 17px;
@@ -120,8 +131,9 @@
 	@media (min-width: $desktop-mini-width) {
 		&__item {
 			a {
-				font-size: 16px;
+				font-size: 14px;
 				line-height: 20px;
+				font-weight: 600;
 			}
 		}
 	}
