@@ -3,15 +3,30 @@ html
         title S-Line
         <meta charset="utf-8">
         <meta data-rh="true" name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1"/>
-        link(href="./css/style.css?version=6" rel="stylesheet")
-        script(src="./js/bundle.js?version=6")
+        <meta name="yandex-verification" content="e94373ac7041b438" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="152x152" href="img/icons/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicons/favicon-16x16.png">
+        <link rel="manifest" href="img/icons/favicons/site.webmanifest">
+        <link rel="mask-icon" href="img/icons/favicons/safari-pinned-tab.svg" color="#ff0000">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff"> 
+
+        link(href="./css/style.css?version=10" rel="stylesheet")
+        script(src="./js/bundle.js?version=10")
+
     body.sline
         header
             nav.slineHeader
                 .container
                     .slineHeader__block
                         a.slineHeader__Logo(href="/")
-                            img(src="./img/content/logo.png")
+                            img(src="./img/content/logo_2.png")
                         .slineHeader__desktopNav
                             ul.slineHeader__list
                                 li.slineHeader__item
@@ -24,7 +39,7 @@ html
                                     a(href="/service.html") Обслуживание
                                 li.slineHeader__item
                                     a(href="/contact.html") Контакты
-                        a.slineHeader__blockPhone(href="tel:+74996535335")
+                        a.slineHeader__blockPhone(href="tel:+74996535335" onclick="ym(89347257,'reachGoal','up_phones')")
                             .slineHeader__Phone +7 (499) 653-53-35
                             .slineHeader__WorkTimer Пн-Пт с 9:00-18:00
                         .slineHeader__OpenMobileBlock
@@ -55,7 +70,8 @@ html
                 .slineFooter__block
                     .slineFooter__header Юридическая информация
                     ul.slineFooter__list
-                        li.slineFooter__item ООО «С-Лайн»<br>ИНН 9000011000<br>КПП 770100000<br>ОГРН: 1207700430948
+                        li.slineFooter__item ООО «С-Лайн»<br>ИНН 7702841487
+                        //<br>КПП 770100000<br>ОГРН: 1207700430948
                         li.slineFooter__item
                             a Политика конфиденциальности
                         li.slineFooter__item
@@ -65,12 +81,12 @@ html
                     .slineFooter__header Контактная информация
                     ul.slineFooter__list
                         li.slineFooter__item
-                            a.slineFooter__phone(href="tel:74996535335") +7 (499) 653-53-35
+                            a.slineFooter__phone(href="tel:74996535335" onclick="ym(89347257,'reachGoal','down_phones')") +7 (499) 653-53-35
+                        //li.slineFooter__item
+                           // a.slineFooter__phone(href="tel:79164744979" onclick="ym(89347257,'reachGoal','down_phones')") +7 (916) 474-49-79
                         li.slineFooter__item
-                            a.slineFooter__phone(href="tel:79164744979") +7 (916) 474-49-79
-                        li.slineFooter__item
-                            a.slineFooter__email(href="mailto:info@sline-air.ru") info@sline-air.ru
-                        li.slineFooter__item 139605, Москва ул. Остоженка, с.1, к.3, офис 55
+                            a.slineFooter__email(href="mailto:info@emifenix.ru") info@emifenix.ru
+                        li.slineFooter__item 127299, город Москва, ул. Клары Цеткин, дом 18, стр. 1
 
                 .slineFooter__block
                     .slineFooter__header Режим работы
@@ -99,10 +115,14 @@ html
             li.slineMobileMenu__item
                 a(href="/contact.html") Контакты
         .slineMobileMenu__contactBlock
-            p.slineMobileMenu__contact Москва ул. Остоженка,<br>с.1, к.3, офис 55
+            p.slineMobileMenu__contact 127299, город Москва,<br> ул. Клары Цеткин,<br> дом 18, стр. 1
             p.slineMobileMenu__contact
-                a(href="tel:74996535335") +7 (499) 653-53-35
-                a(href="tel:79164744979") +7 (916) 474-49-79
-            a(href="mailto:info@sline-air.ru").slineMobileMenu__contact info@sline-air.ru
+                a(href="tel:74996535335" onclick="ym(89347257,'reachGoal','mm_phones')") +7 (499) 653-53-35
+                //a(href="tel:79164744979" onclick="ym(89347257,'reachGoal','mm_phones')") +7 (916) 474-49-79
+            a(href="mailto:info@emifenix.ru").slineMobileMenu__contact info@emifenix.ru
 
     .backrgoundPrallax
+
+    <!-- Yandex.Metrika counter -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/89347257" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->

@@ -1,0 +1,36 @@
+.down-arrow {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 14px);
+    width: 0;
+    height: 30px;
+    border: 2px solid #EF7943;
+    border-radius: 2px;
+    animation: jumpInfinite 1.5s infinite;
+    z-index: 99;
+  }
+  
+  .down-arrow:after {
+    content: " ";
+    position: absolute;
+    top: 12px;
+    left: -10px;
+    width: 16px;
+    height: 16px;
+    border-bottom: 4px solid #EF7943;
+    border-right: 4px solid #EF7943;
+    border-radius: 4px;
+    transform: rotateZ(45deg);
+  }
+  
+  @keyframes jumpInfinite {
+    0% {
+        margin-bottom: 0;
+    }
+    50% {
+        margin-bottom: 20px;
+    }
+    100% {
+        margin-bottom: 0;
+    }
+  }

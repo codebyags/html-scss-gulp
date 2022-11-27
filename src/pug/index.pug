@@ -1,7 +1,21 @@
 extends common/layout.pug
 
 block content
-        section.slineBlock1
+        section.slineBanner
+            .slineBanner__ImageBlock
+                img.slineBanner__Image(src="./img/content/banner.jpg")
+                //.down-arrow
+            .container
+                .slineBanner__content
+                    h1.slineBanner__header 
+                        .container ОБОРУДОВАНИЕ<br>ДЛЯ ПРОМЫШЛЕННОЙ<br>ОЧИСТКИ ВОЗДУХА
+                    .slineBanner__TextBlock
+                        p.slineBanner__text Компания «С-Лайн» с 2014 г., занимается производством, установкой и обслуживанием воздухоочистительных систем.<br>Мы используем оптимальные протоколы связи центральной диспетчеризации RS-485, интерактивные системы, GSM-управление, что дает дистанционный контроль оборудования.
+                        p.slineBanner__text.slineBanner__text_desctop Работаем только с надёжными, проверенными поставщиками. Команда специалистов отвечает за сборку и кастомизацию оборудования, подлежащего обязательной сертификации (ГОСТ Р, ISO, ЕАЭС). Гарантия на поставляемое нами оборудование – 10 лет. Собственный склад запасных частей.<br><br>Специалисты наших сервисных бригад осуществляют оперативное аварийное реагирование с круглосуточным выездом на объект. Проводим обучение персонала для регионов.
+                        a.slineBanner__button.btn(href="/company.html") Подробнее
+
+
+        //section.slineBlock1
             .container
                 .slineBlock1__content
                     img.slineBlock1__ImageMobile(src="./img/content/main.png")
@@ -16,8 +30,22 @@ block content
             .container
                 .slineBlock2__content
                     .slineBlock2__images
-                        img.slineBlock2__ImageMobile(src="./img/content/second.png")
-                        img.slineBlock2__ImageDesctop(src="./img/content/second.png")
+                        .swiper.js-Block2Slider.slineBlock2__imagesSwiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    img.slineBlock2__ImageMobile(src="./img/content/aero_pro.png")
+
+
+                                .swiper-slide
+                                    img.slineBlock2__ImageMobile(src="./img/content/aqua.png")
+
+                                .swiper-slide
+                                    img.slineBlock2__ImageMobile(src="./img/content/aero_base.png")
+
+                                .swiper-slide
+                                    img.slineBlock2__ImageMobile(src="./img/content/aqua_pro.png")
+                            .swiper-pagination
+
                     .slineBlock2__info
                         h2.slineBlock2__header Собственное проектирование и производство оборудования
                         p.slineBlock2__text Мы предлагаем полный цикл услуг для очистки воздуха промышленных предприятий, основанный на уникальной линейке оборудования, полностью независимой от зарубежных поставщиков.<br><br>Установки для очистки воздуха S-Line Aero Base, Haze, Auto, изготовленные на нашем производстве, позволяют очищать воздух от дыма, аэрозолей, взвешенных частиц, устранять запахи. В серии Aero (Base) используется окисление озоном в больших концентрациях, Aero Pro (Haze) действует за счет электрического разряда, в серии Auto используются моноблоки статической очистки и фильтры с ионизацией.<br><br>Нашей компанией разработаны проточные (S-Line Aqua) и накопительные (S-Line Aqua RRO) гидрофильтры. Они нужны для осаждения сажи, гашения искр, снижения температуры воздуха до допустимого уровня и как модули подготовки воздуха к очистке. Служат средством пожарной безопасности. Используются в основном в ресторанах.
@@ -80,11 +108,11 @@ block content
                     .slineBlock4__info
                         h2.slineBlock4__header Контакты
                         p.slineBlock4__phons
-                            a.slineBlock4__phone(href="tel:74996535335") +7 (499) 653-53-35
-                            a.slineBlock4__phone(href="tel:79164744979") +7 (916) 474-49-79
-                        a.slineBlock4__email(href="mailto:info@sline-air.ru") info@sline-air.ru
-                        .slineBlock4__address Москва ул. Остоженка,<br>с.1, к.3, офис 55
+                            a.slineBlock4__phone(href="tel:74996535335" onclick="ym(89347257,'reachGoal','contact_phones')") +7 (499) 653-53-35
+                            // a.slineBlock4__phone(href="tel:79164744979" onclick="ym(89347257,'reachGoal','contact_phones')") +7 (916) 474-49-79
+                        a.slineBlock4__email(href="mailto:info@emifenix.ru") info@emifenix.ru
+                        .slineBlock4__address 127299, город Москва, ул. Клары Цеткин, дом 18, стр. 1
                         .slineBlock4__worktime Работаем по будням с 9:00-18:00
-                        button.slineBlock4__button.btn Обратный звонок
-                    .slineBlock4__map <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A3c070d618b89bcb6734290d39a5284efbd6c133e7feb26a19cfa490df62543e1&amp;source=constructor" width="100%" height="500" frameborder="0"></iframe>
+                        button.slineBlock4__button.btn(onclick="ym(89347257,'reachGoal','contact_callback')") Обратный звонок
+                    .slineBlock4__map <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5cc9ab4f416cfe87f849808398bc7a1f74927f33d336aef75adc380ad7772816&amp;source=constructor" width="100%" height="600" frameborder="0"></iframe>
 

@@ -7,12 +7,22 @@ const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const fs = require('fs');
+const path = require("path");
 const webp = require('gulp-webp');
 const pug = require('gulp-pug');
 const gulpHtmlBemValidator = require('gulp-html-bem-validator');
 const imagemin = require("gulp-imagemin");
 const cssminify = require("gulp-css-minify");
+const rename = require("gulp-rename");
+const resizer = require('gulp-images-resizer');
+const imgRetina = require('gulp-img-retina'); // ДОРАБОТАТЬ ! reImageSrc в index.js, убрать svg
 
+var retinaOpts = {
+	suffix: {
+		'2': 'x2',
+		'1': '',
+	}
+};
 
 function browsersync(cb) {
 	browserSync.init({
@@ -20,6 +30,11 @@ function browsersync(cb) {
 		server: {
 			baseDir: './build/',
 			index: "index.html",
+		},
+		ghostMode: {
+			clicks: true,
+			forms: true,
+			scroll: true
 		}
 	});
 	cb();
@@ -36,9 +51,9 @@ function contentImagesWebp(cb) {
 		'./src/img/content/**/*.jpg',
 		'./src/img/content/**/*.png'
 	])
-	.pipe(webp())
-	.pipe(dest('./build/img/content/webp/'))
-	.pipe(browserSync.stream());
+		.pipe(webp())
+		.pipe(dest('./build/img/content/webp/'))
+		.pipe(browserSync.stream());
 
 	cb();
 }
@@ -46,7 +61,9 @@ function contentImagesWebp(cb) {
 function scripts(cb) {
 	src([
 		//'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+		'./node_modules/vanilla-lazyload/dist/lazyload.js',
 		'./node_modules/swiper/swiper-bundle.js',
+		'./node_modules/imask/dist/imask.js',
 		'./src/js/usr/**/*.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
 	])
 		.pipe(concat('bundle.js')) // Конкатенируем в один файл
@@ -75,7 +92,11 @@ function pugTemplates(cb) {
 	try {
 		src('./src/pug/*.pug')
 			.pipe(pug())
+			.on('error', function(e) {
+				console.log(e.message);
+			})
 			.pipe(gulpHtmlBemValidator())
+			.pipe(imgRetina(retinaOpts))
 			.pipe(dest('./build/'))
 			.pipe(browserSync.stream());
 	} catch (e) {
@@ -109,9 +130,9 @@ function createProject(cb) {
 
 	// Начальные файлы проекта для теста
 	const files = [
-		{f:'./pug/index.pug', c:'h1 Список файлов:'},
-		{f:'./js/usr/app.js', c:'console.log("JS!")'},
-		{f:'./scss/style.scss', c:'body{color:red}'}
+		{f:'./pug/index.pug', c:'h1 Проект готов к работе !'},
+		{f:'./js/usr/app.js', c:'console.log("JS готов к работе !")'},
+		{f:'./scss/style.scss', c:'@import "node_modules/reset-css/sass/reset";body{color:red}'}
 	];
 	files.forEach(file => {
 		let file_path = "./src/" + file.f;
@@ -131,28 +152,50 @@ function createProject(cb) {
 	cb();
 }
 
-function imageMin(cb) {
-
-	fs.readdir('./src/img/content/', function (err, files) {
-		//handling error
-		if (err) {
-			return console.log('Unable to scan directory: ' + err);
+// Рекурсия обработки файлов
+const getAllFiles = function(dirPath, arrayOfFiles) {
+	files = fs.readdirSync(dirPath)
+	arrayOfFiles = arrayOfFiles || []
+	files.forEach(function(file) {
+		if (fs.statSync(dirPath + "/" + file).isDirectory()) {
+			arrayOfFiles = getAllFiles(dirPath + "/" + file, arrayOfFiles)
+		} else {
+			arrayOfFiles.push([dirPath, file])
 		}
-		//listing all files using forEach
-		files.forEach(function (file) {
-			// Do whatever you want to do with the file
-			console.log("Работа с файлом: " + file);
-			src('./src/img/content/' + file)
-				.pipe(imagemin())
-				.pipe(dest('./build/img/content'))
-		});
+	})
+	return arrayOfFiles
+}
+
+function imageMin(cb) {
+	let path_files = './src/img/content';
+	getAllFiles(path_files).forEach(function (file) {
+		let dest_path = './build/img/content' + file[0].replace(path_files,'');
+		console.log("📝 Работа с файлом: " + file[0] + "/" + file[1] + " Размещение в: " + dest_path);
+
+		src(file[0] + "/" + file[1])
+			.pipe(rename(function (path) {
+				path.basename += "x2";
+				console.log(path.basename)
+			}))
+			//.pipe(imagemin())
+			.pipe(dest(dest_path))
+
+			.pipe(rename(function (path) {
+				path.basename = path.basename.replace("x2", '');
+				console.log(path.basename)
+			}))
+			.pipe(resizer({
+				verbose: true,
+				width: "50%"
+			}))
+			.pipe(imagemin())
+			.pipe(dest(dest_path));
 	});
 
 
-	src('./src/img/icons/*')
+	src('./src/img/icons/**/*')
 		.pipe(dest('./build/img/icons'))
 		.pipe(browserSync.stream());
-
 	cb();
 }
 

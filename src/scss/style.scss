@@ -4,6 +4,7 @@ $desktop-width: 1280px;
 
 
 @import "./node_modules/reset-css/sass/reset";
+@import "node_modules/swiper/swiper";
 
 @import "colors";
 @import "typo";
@@ -19,6 +20,7 @@ $desktop-width: 1280px;
 @import "backrgoundPrallax";
 
 
+@import "Banner";
 @import "block1";
 @import "block2";
 @import "slineBlock3";

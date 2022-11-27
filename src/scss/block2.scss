@@ -9,10 +9,20 @@
 
 	&__ImageMobile {
 		width: 100%;
+		max-width: 100vw;
 	}
 
 	&__images {
 		padding: 0 16px;
+	}
+
+	&__imagesSwiper {
+		width: 100%;
+		max-width: 100%;
+
+		.swiper-slide {
+
+		}
 	}
 
 	&__ImageDesctop {
@@ -47,17 +57,17 @@
 		}
 
 		&__images {
-			order: 1;
+			order: 3;
 		}
 
 		&__ImageMobile {
-			display: none;
+			//display: none;
 		}
 
 		&__ImageDesctop {
 			display: block;
 			max-width: 100%;
-			object-fit: cover;
+			width: 100%;
 		}
 
 		&__info {

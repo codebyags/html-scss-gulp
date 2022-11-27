@@ -48,3 +48,48 @@
 
 
 }
+
+
+
+// Модификация swiper.js
+.swiper {
+
+	.swiper-slide {
+		background-position: center;
+		background-size: cover;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.swiper-pagination {
+		position: absolute;
+		bottom:0px;
+		left:0px;
+		right:0px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.swiper-pagination-bullet  {
+			width: 8px;
+			height: 8px;
+			border-radius: 4px;
+			background-color:$main-l;
+			margin:0 4px;
+
+			transition: opacity 0.2s ease-in-out, width 0.4s ease-in-out;
+
+			filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.05));
+		}
+
+		.swiper-pagination-bullet-active {
+			width: 24px;
+			height: 8px;
+			opacity: 1;
+			background-color: $main;
+		}
+	}
+}
